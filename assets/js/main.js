@@ -243,7 +243,7 @@ function renderGallery() {
           Lihat ${mediaCount} Media
         </button>
         <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-2.5 py-1.5 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-[10px] sm:text-xs font-semibold text-center flex items-center justify-center gap-1 transition-all shadow-sm">
-          Tanya WA →
+          Tanya WA
         </a>
       </div>
     `;
