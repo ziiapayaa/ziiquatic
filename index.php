@@ -18,6 +18,18 @@
 
   <!-- Modular Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime('assets/css/style.css') ?: '2' ?>">
+
+  <!-- Clean URL (Auto-strip ?i= parameter from InfinityFree) -->
+  <script>
+    try {
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('i')) {
+        url.searchParams.delete('i');
+        const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash;
+        window.history.replaceState(null, '', cleanPath);
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body class="bg-ivory-100 text-stoneink-900 antialiased selection:bg-moss-100 selection:text-moss-900">
 

@@ -3,6 +3,18 @@
  * Main Frontend Logic
  */
 
+// Clean URL Helper (Menghapus ?i=1, ?i=2 otomatis dari address bar)
+(function cleanUrlParams() {
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('i')) {
+      url.searchParams.delete('i');
+      const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash;
+      window.history.replaceState(null, '', cleanPath);
+    }
+  } catch (e) {}
+})();
+
 // Global State
 let portfolioProjects = [];
 let activeProjectMedia = [];
