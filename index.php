@@ -17,7 +17,7 @@
   <script src="assets/js/tailwind-config.js"></script>
 
   <!-- Modular Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime('assets/css/style.css') ?: '2' ?>">
 </head>
 <body class="bg-ivory-100 text-stoneink-900 antialiased selection:bg-moss-100 selection:text-moss-900">
 
@@ -407,7 +407,7 @@
     </div>
   </div>
 
-  <!-- Modular Scripts -->
-  <script src="assets/js/main.js"></script>
+  <!-- Modular Scripts (Auto-cache-busting) -->
+  <script src="assets/js/main.js?v=<?= @filemtime('assets/js/main.js') ?: '2' ?>"></script>
 </body>
 </html>
