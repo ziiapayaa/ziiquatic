@@ -49,7 +49,7 @@
       </a>
 
       <!-- ORDER Button (Desktop & Mobile) -->
-      <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20saya%20ingin%20melakukan%20pemesanan%20%2F%20order%20aquarium%20air%20laut." 
+      <a href="https://wa.me/6281991586496?text=Halo%20ziiquatic%2C%20saya%20ingin%20melakukan%20pemesanan%20%2F%20order%20aquarium%20air%20laut." 
          target="_blank" 
          class="px-5 py-2 rounded-full bg-stoneink-900 hover:bg-stoneink-800 text-white text-[11px] font-bold tracking-widest uppercase transition-all shadow-sm active:scale-95">
         ORDER
@@ -75,7 +75,7 @@
         <a href="#karya" onclick="document.getElementById('karya')?.scrollIntoView({behavior: 'smooth'}); return false;" class="w-full sm:w-auto px-7 py-3 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide text-center transition-all shadow-sm">
           Lihat Pilihan Ukuran ↓
         </a>
-        <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20mau%20konsultasi%20pembuatan%20aquarium%20air%20laut%20lengkap." target="_blank" class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-ivory-200 text-stoneink-800 border border-ivory-300 text-xs sm:text-sm font-semibold text-center transition-all flex items-center justify-center gap-2">
+        <a href="https://wa.me/6281991586496?text=Halo%20ziiquatic%2C%20mau%20konsultasi%20pembuatan%20aquarium%20air%20laut%20lengkap." target="_blank" class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-ivory-200 text-stoneink-800 border border-ivory-300 text-xs sm:text-sm font-semibold text-center transition-all flex items-center justify-center gap-2">
           <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           Konsultasi WhatsApp
         </a>
@@ -328,11 +328,11 @@
       <!-- Social Media & Contact Logos -->
       <div class="flex items-center justify-center gap-3.5 pt-1">
         <!-- WhatsApp Icon Button -->
-        <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20saya%20ingin%20konsultasi%20pembuatan%20aquarium%20air%20laut." 
+        <a href="https://wa.me/6281991586496?text=Halo%20ziiquatic%2C%20saya%20ingin%20konsultasi%20pembuatan%20aquarium%20air%20laut." 
            target="_blank" 
            rel="noopener noreferrer" 
            aria-label="WhatsApp ziiquatic" 
-           title="WhatsApp: 081958645167"
+           title="WhatsApp: 081991586496"
            class="w-11 h-11 rounded-full bg-ivory-100 hover:bg-moss-800 text-stoneink-800 hover:text-white border border-ivory-300 hover:border-moss-800 flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-105 active:scale-95 group">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
