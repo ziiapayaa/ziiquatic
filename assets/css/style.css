@@ -3,6 +3,18 @@
    Custom Stylesheet (Modular)
    ======================================================== */
 
+/* Global Mobile Reset (Anti Horizontal Overflow & Clipping) */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 /* Styling Natural Ivory Theme */
 body {
   background-color: #FAF8F5;

@@ -47,25 +47,25 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
   <script src="../assets/js/tailwind-config.js"></script>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body class="bg-ivory-100 text-stoneink-900 min-h-screen antialiased flex flex-col">
+<body class="bg-ivory-100 text-stoneink-900 min-h-screen antialiased flex flex-col w-full max-w-full overflow-x-hidden">
 
   <!-- Top Admin Navbar (Mobile-First) -->
-  <header class="bg-white border-b border-ivory-300 sticky top-0 z-30 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-3">
+  <header class="bg-white border-b border-ivory-300 sticky top-0 z-30 shadow-sm w-full max-w-full">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-8 py-3 flex items-center justify-between gap-2 w-full">
       
       <!-- Brand Logo -->
-      <a href="index.php" class="flex items-center gap-2 group shrink-0">
+      <a href="index.php" class="flex items-center gap-2 group shrink min-w-0">
         <img src="../logo.png" alt="ziiquatic" class="h-7 sm:h-8 w-auto object-contain shrink-0">
-        <span class="text-base sm:text-lg font-bold tracking-tight text-stoneink-900 lowercase font-sans">
+        <span class="text-base sm:text-lg font-bold tracking-tight text-stoneink-900 lowercase font-sans truncate">
           ziiquatic<span class="text-moss-700">.</span>
         </span>
-        <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-moss-50 text-moss-800 border border-moss-100">
+        <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-moss-50 text-moss-800 border border-moss-100 shrink-0">
           Admin
         </span>
       </a>
 
       <!-- Desktop Nav Buttons (md ke atas) -->
-      <nav class="hidden md:flex items-center gap-2.5 text-xs font-medium">
+      <nav class="hidden md:flex items-center gap-2.5 text-xs font-medium shrink-0">
         <a href="settings.php" class="px-3.5 py-2 rounded-full border border-ivory-300 text-stoneink-700 hover:text-stoneink-900 hover:bg-ivory-50 transition-all flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-stoneink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           Ganti Password
@@ -80,7 +80,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
       </nav>
 
       <!-- Mobile Controls (Hamburger & Quick Web Link) -->
-      <div class="flex md:hidden items-center gap-2">
+      <div class="flex md:hidden items-center gap-2 shrink-0">
         <a href="../" target="_blank" title="Lihat Website" class="w-9 h-9 rounded-full bg-ivory-100 border border-ivory-300 flex items-center justify-center text-stoneink-700 active:scale-95 shadow-sm">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
@@ -116,7 +116,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-5 sm:py-8 flex-1 w-full space-y-6 sm:space-y-8">
+  <main class="max-w-7xl mx-auto px-3.5 sm:px-8 py-5 sm:py-8 flex-1 w-full max-w-full overflow-x-hidden space-y-5 sm:space-y-8">
     
     <!-- Peringatan Password Default Sebelum Hosting -->
     <?php if (is_default_password()): ?>
@@ -165,50 +165,50 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
     <?php endif; ?>
 
     <!-- Overview Stats Grid (Mobile Compact & Clear) -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 w-full">
       
-      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Model</span>
+      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Model</span>
         <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1"><?= $totalProjects ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Ukuran aktif</p>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Ukuran aktif</p>
       </div>
 
-      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Foto</span>
+      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Foto</span>
         <div class="text-xl sm:text-3xl font-extrabold text-moss-800 mt-1"><?= $totalImages ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Foto tersimpan</p>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Foto tersimpan</p>
       </div>
 
-      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Video</span>
+      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Video</span>
         <div class="text-xl sm:text-3xl font-extrabold text-emerald-700 mt-1"><?= $totalVideos ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Video biota</p>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Video biota</p>
       </div>
 
-      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Di Beranda</span>
+      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Di Beranda</span>
         <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1">Maks 6</div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Awal tampil</p>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Awal tampil</p>
       </div>
 
     </div>
 
     <!-- Header List & Add Button (Mobile-First Prominent) -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 pt-1">
-      <div>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 w-full">
+      <div class="min-w-0">
         <h2 class="text-lg sm:text-2xl font-bold text-stoneink-900 tracking-tight">Koleksi Portofolio & Media</h2>
         <p class="text-xs sm:text-sm text-stoneink-500 mt-0.5">Kelola foto dan video aquarium yang tampil di website.</p>
       </div>
 
-      <a href="add.php" class="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-2xl sm:rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md flex items-center justify-center gap-2 active:scale-98">
+      <a href="add.php" class="w-full sm:w-auto px-5 py-3.5 sm:py-3 rounded-2xl sm:rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md flex items-center justify-center gap-2 active:scale-98 shrink-0 text-center">
         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-        <span>+ Tambah Model Baru</span>
+        <span>Tambah Model Baru</span>
       </a>
     </div>
 
     <!-- Items Grid / List -->
     <?php if (empty($projects)): ?>
-      <div class="bg-white rounded-3xl border border-ivory-300 p-12 text-center space-y-4">
+      <div class="bg-white rounded-3xl border border-ivory-300 p-8 sm:p-12 text-center space-y-4">
         <div class="w-16 h-16 rounded-full bg-ivory-100 flex items-center justify-center text-moss-800 mx-auto text-2xl font-bold">
           ?
         </div>
@@ -219,7 +219,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
         </a>
       </div>
     <?php else: ?>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 w-full">
         <?php foreach ($projects as $item): ?>
           <?php
             $cover = !empty($item['mediaList'][0]['src']) ? $item['mediaList'][0]['src'] : 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80';
@@ -236,7 +236,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
             }
             $imgCount = $mediaCount - $videoCount;
           ?>
-          <div class="bg-white rounded-2xl border border-ivory-300 p-4 shadow-sm hover:border-stoneink-400 transition-all flex flex-col justify-between space-y-4">
+          <div class="bg-white rounded-2xl border border-ivory-300 p-3.5 sm:p-4 shadow-sm hover:border-stoneink-400 transition-all flex flex-col justify-between space-y-3.5 sm:space-y-4 w-full min-w-0">
             
             <div class="space-y-3">
               <!-- Cover Image & Badges -->
