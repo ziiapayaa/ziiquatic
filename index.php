@@ -365,7 +365,7 @@
         <!-- Badges on Media -->
         <div class="absolute bottom-3 right-3 pointer-events-none">
           <span id="modalMediaBadge" class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-stoneink-900/80 text-ivory-100 backdrop-blur-md border border-white/20">
-            1 / 1
+            1/1
           </span>
         </div>
 

@@ -276,13 +276,12 @@ function renderMediaView() {
     imgEl.src = 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80';
     imgEl.classList.remove('hidden');
     videoEl.classList.add('hidden');
-    badgeEl.innerText = '0 / 0';
+    badgeEl.innerText = '0/0';
     return;
   }
 
   const current = activeProjectMedia[currentMediaIndex];
-  const safeLabel = current && current.label ? ' • ' + current.label : '';
-  badgeEl.innerText = `${currentMediaIndex + 1} / ${activeProjectMedia.length}${safeLabel}`;
+  badgeEl.innerText = `${currentMediaIndex + 1}/${activeProjectMedia.length}`;
 
   if (current.type === 'video') {
     imgEl.classList.add('hidden');
