@@ -169,7 +169,7 @@ function renderGallery() {
     const hasVideo = item.mediaList && Array.isArray(item.mediaList) ? item.mediaList.some(m => m.type === 'video') : false;
 
     const waText = encodeURIComponent(`Halo ziiquatic, saya ingin tanya estimasi biaya dan konsultasi untuk "${item.title}". Apakah bisa dipesan paket lengkap terima beres?`);
-    const waLink = `https://wa.me/6281234567890?text=${waText}`;
+    const waLink = `https://wa.me/6281958645167?text=${waText}`;
 
     const card = document.createElement('div');
     card.className = "bg-white rounded-2xl p-2.5 sm:p-4 border border-ivory-300 hover:border-stoneink-400 transition-all flex flex-col justify-between group shadow-sm";
@@ -258,7 +258,7 @@ function openModal(projectId) {
   document.getElementById('modalDesc').innerText = item.desc || '';
 
   const waText = encodeURIComponent(`Halo ziiquatic, saya melihat contoh "${item.title}". Mau konsultasi pembuatan untuk ukuran ini.`);
-  document.getElementById('modalWaBtn').href = `https://wa.me/6281234567890?text=${waText}`;
+  document.getElementById('modalWaBtn').href = `https://wa.me/6281958645167?text=${waText}`;
 
   renderMediaView();
 

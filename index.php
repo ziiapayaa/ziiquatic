@@ -37,7 +37,7 @@
       </a>
 
       <!-- ORDER Button (Desktop & Mobile) -->
-      <a href="https://wa.me/6281234567890?text=Halo%20ziiquatic%2C%20saya%20ingin%20melakukan%20pemesanan%20%2F%20order%20aquarium%20air%20laut." 
+      <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20saya%20ingin%20melakukan%20pemesanan%20%2F%20order%20aquarium%20air%20laut." 
          target="_blank" 
          class="px-5 py-2 rounded-full bg-stoneink-900 hover:bg-stoneink-800 text-white text-[11px] font-bold tracking-widest uppercase transition-all shadow-sm active:scale-95">
         ORDER
@@ -63,7 +63,7 @@
         <a href="#karya" class="w-full sm:w-auto px-7 py-3 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide text-center transition-all shadow-sm">
           Lihat Pilihan Ukuran ↓
         </a>
-        <a href="https://wa.me/6281234567890?text=Halo%20ziiquatic%2C%20mau%20konsultasi%20pembuatan%20aquarium%20air%20laut%20lengkap." target="_blank" class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-ivory-200 text-stoneink-800 border border-ivory-300 text-xs sm:text-sm font-semibold text-center transition-all flex items-center justify-center gap-2">
+        <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20mau%20konsultasi%20pembuatan%20aquarium%20air%20laut%20lengkap." target="_blank" class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-ivory-200 text-stoneink-800 border border-ivory-300 text-xs sm:text-sm font-semibold text-center transition-all flex items-center justify-center gap-2">
           <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           Konsultasi WhatsApp
         </a>
@@ -295,55 +295,54 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Centered & Clean Atelier) -->
   <footer id="footerSection" class="bg-white border-t border-ivory-300 py-12 text-stoneink-700">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 space-y-8">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center space-y-6">
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-        
-        <!-- Brand Info -->
-        <div class="md:col-span-5 space-y-3">
-          <div class="flex items-center gap-2.5">
-            <img src="logo.png" alt="ziiquatic" class="h-7 sm:h-8 w-auto object-contain shrink-0">
-            <span class="text-xl font-bold tracking-tight text-stoneink-900 lowercase font-sans">
-              ziiquatic<span class="text-moss-700">.</span>
-            </span>
-          </div>
-          <p class="text-xs text-stoneink-600 leading-relaxed max-w-sm">
-            Studio spesialis dekorasi aquarium air laut, living reef, nano marine tank, dan instalasi terumbu karang kustom. Melayani instalasi baru, perbaikan ekosistem, dan pendampingan berkala.
-          </p>
+      <!-- Brand Logo & Studio Desc -->
+      <div class="flex flex-col items-center space-y-3">
+        <div class="flex items-center justify-center gap-2.5">
+          <img src="logo.png" alt="ziiquatic" class="h-8 sm:h-9 w-auto object-contain">
+          <span class="text-2xl font-bold tracking-tight text-stoneink-900 lowercase font-sans">
+            ziiquatic<span class="text-moss-700">.</span>
+          </span>
         </div>
+        <p class="text-xs sm:text-sm text-stoneink-600 leading-relaxed max-w-lg mx-auto">
+          Studio spesialis dekorasi aquarium air laut, living reef, nano marine tank, dan instalasi terumbu karang kustom. Melayani instalasi baru, perbaikan ekosistem, dan pendampingan berkala.
+        </p>
+      </div>
 
-        <!-- Navigasi -->
-        <div class="md:col-span-3 space-y-2.5">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-stoneink-900">NAVIGASI</h4>
-          <ul class="space-y-2 text-xs text-stoneink-600">
-            <li><a href="#karya" class="hover:text-moss-800 transition-colors">Portofolio Biota Laut</a></li>
-            <li><a href="#penyediaan" class="hover:text-moss-800 transition-colors">Kategori Ruang</a></li>
-            <li><a href="#alur" class="hover:text-moss-800 transition-colors">Alur Konsultasi WA</a></li>
-            <li><a href="#keunggulan" class="hover:text-moss-800 transition-colors">Tentang Kami</a></li>
-          </ul>
-        </div>
+      <!-- Social Media & Contact Logos -->
+      <div class="flex items-center justify-center gap-3.5 pt-1">
+        <!-- WhatsApp Icon Button -->
+        <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20saya%20ingin%20konsultasi%20pembuatan%20aquarium%20air%20laut." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="WhatsApp ziiquatic" 
+           title="WhatsApp: 081958645167"
+           class="w-11 h-11 rounded-full bg-ivory-100 hover:bg-moss-800 text-stoneink-800 hover:text-white border border-ivory-300 hover:border-moss-800 flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-105 active:scale-95 group">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+        </a>
 
-        <!-- Kontak & Konsultasi -->
-        <div class="md:col-span-4 space-y-2.5">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-stoneink-900">KONTAK & KONSULTASI</h4>
-          <p class="text-xs text-stoneink-600 leading-relaxed">
-            Untuk diskusi penempatan ruangan atau konsultasi biaya akuarium air laut, hubungi kami via WhatsApp:
-          </p>
-          <div class="space-y-1.5 text-xs text-stoneink-700 font-medium">
-            <p>WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" class="text-moss-700 underline font-semibold">+62 812–3456–7890</a></p>
-            <p>Instagram: <span class="text-stoneink-800">@ziiquatic</span></p>
-            <p>Layanan: <span class="text-stoneink-800">Home & Office Marine Visit</span></p>
-          </div>
-        </div>
-
+        <!-- Instagram Icon Button -->
+        <a href="https://www.instagram.com/ziiquatic?rpxt=MWtoMm5udXBjeWdzMg==" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Instagram @ziiquatic" 
+           title="Instagram @ziiquatic"
+           class="w-11 h-11 rounded-full bg-ivory-100 hover:bg-moss-800 text-stoneink-800 hover:text-white border border-ivory-300 hover:border-moss-800 flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-105 active:scale-95 group">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
       </div>
 
       <!-- Copyright Singkat -->
       <div class="pt-6 border-t border-ivory-200 text-center text-[11px] text-stoneink-500 space-y-1">
         <p>© 2026 ziiquatic. Seluruh hak cipta dilindungi.</p>
-        <p>Bespoke Marine Aquarium & Living Reef Design</p>
+        <p>Marine & Reef Atelier</p>
       </div>
 
     </div>
