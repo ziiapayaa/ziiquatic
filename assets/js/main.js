@@ -3,17 +3,45 @@
  * Main Frontend Logic
  */
 
-// Clean URL Helper (Menghapus ?i=1, ?i=2 otomatis dari address bar)
+// Clean URL & Hash Helper (Menghapus ?i=1, ?i=2 dan tanda #hashtag agar URL selalu bersih)
 (function cleanUrlParams() {
   try {
     const url = new URL(window.location.href);
-    if (url.searchParams.has('i')) {
+    if (url.searchParams.has('i') || url.hash) {
       url.searchParams.delete('i');
-      const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash;
+      const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '');
       window.history.replaceState(null, '', cleanPath);
     }
   } catch (e) {}
 })();
+
+// Interceptor link hash: Smooth scroll tanpa menambahkan tanda # di URL
+document.addEventListener('click', function(e) {
+  const anchor = e.target.closest('a[href^="#"]');
+  if (anchor) {
+    const hash = anchor.getAttribute('href');
+    if (hash === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (hash.startsWith('#') && hash.length > 1) {
+      const targetId = hash.slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        if (window.location.hash) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }
+    }
+  }
+});
+
+window.addEventListener('hashchange', function() {
+  if (window.location.hash) {
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+});
 
 // Global State
 let portfolioProjects = [];

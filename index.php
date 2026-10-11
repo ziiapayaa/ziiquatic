@@ -19,13 +19,13 @@
   <!-- Modular Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime('assets/css/style.css') ?: '2' ?>">
 
-  <!-- Clean URL (Auto-strip ?i= parameter from InfinityFree) -->
+  <!-- Clean URL (Auto-strip ?i= parameter & #hash untuk URL bersih) -->
   <script>
     try {
       const url = new URL(window.location.href);
-      if (url.searchParams.has('i')) {
+      if (url.searchParams.has('i') || url.hash) {
         url.searchParams.delete('i');
-        const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '') + url.hash;
+        const cleanPath = url.pathname + (url.searchParams.toString() ? '?' + url.searchParams.toString() : '');
         window.history.replaceState(null, '', cleanPath);
       }
     } catch (e) {}
@@ -38,7 +38,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3.5 sm:py-4 flex items-center justify-between">
       
       <!-- Brand Logo: ziiquatic -->
-      <a href="#" class="flex items-center gap-2.5 group">
+      <a href="./" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-2.5 group">
         <img src="logo.png" alt="ziiquatic" class="h-7 sm:h-8 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform">
         <div class="flex flex-col">
           <span class="text-xl font-bold tracking-tight text-stoneink-900 lowercase font-sans">
@@ -72,7 +72,7 @@
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-        <a href="#karya" class="w-full sm:w-auto px-7 py-3 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide text-center transition-all shadow-sm">
+        <a href="#karya" onclick="document.getElementById('karya')?.scrollIntoView({behavior: 'smooth'}); return false;" class="w-full sm:w-auto px-7 py-3 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide text-center transition-all shadow-sm">
           Lihat Pilihan Ukuran ↓
         </a>
         <a href="https://wa.me/6281958645167?text=Halo%20ziiquatic%2C%20mau%20konsultasi%20pembuatan%20aquarium%20air%20laut%20lengkap." target="_blank" class="w-full sm:w-auto px-7 py-3 rounded-full bg-white hover:bg-ivory-200 text-stoneink-800 border border-ivory-300 text-xs sm:text-sm font-semibold text-center transition-all flex items-center justify-center gap-2">
