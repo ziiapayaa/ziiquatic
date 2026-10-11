@@ -185,7 +185,7 @@ $isDefault = is_default_password();
   </main>
 
   <footer class="bg-white border-t border-ivory-300 py-4 text-center text-xs text-stoneink-500">
-    <p>© 2026 ziiquatic Studio Admin Panel • Marine & Reef Atelier</p>
+    <p>© 2026 ziiquatic Studio Admin Panel</p>
   </footer>
 
   <script>

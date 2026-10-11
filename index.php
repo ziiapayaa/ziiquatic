@@ -355,9 +355,8 @@
     </div>
 
     <!-- Copyright Bottom Bar (Presisi Vertikal Sempurna: py-6) -->
-    <div class="border-t border-ivory-200 py-6 text-center text-[11px] text-stoneink-500 space-y-1">
+    <div class="border-t border-ivory-200 py-6 text-center text-[11px] text-stoneink-500">
       <p>© 2026 ziiquatic. Seluruh hak cipta dilindungi.</p>
-      <p>Marine & Reef Atelier</p>
     </div>
   </footer>
 

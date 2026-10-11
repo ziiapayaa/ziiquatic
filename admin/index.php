@@ -254,7 +254,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
 
   <!-- Admin Footer -->
   <footer class="bg-white border-t border-ivory-300 py-5 text-center text-xs text-stoneink-500">
-    <p>© 2026 ziiquatic Studio Admin Panel • Marine & Reef Atelier</p>
+    <p>© 2026 ziiquatic Studio Admin Panel</p>
   </footer>
 
   <!-- Custom Delete Confirmation Modal -->
