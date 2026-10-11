@@ -4,26 +4,7 @@ require_login();
 
 $projects = get_all_projects();
 
-// Hitung statistik
 $totalProjects = count($projects);
-$totalImages = 0;
-$totalVideos = 0;
-$categoryCounts = ['kecil' => 0, 'sedang' => 0, 'besar' => 0];
-
-foreach ($projects as $p) {
-    if (isset($p['category']) && isset($categoryCounts[$p['category']])) {
-        $categoryCounts[$p['category']]++;
-    }
-    if (isset($p['mediaList']) && is_array($p['mediaList'])) {
-        foreach ($p['mediaList'] as $m) {
-            if (($m['type'] ?? '') === 'video') {
-                $totalVideos++;
-            } else {
-                $totalImages++;
-            }
-        }
-    }
-}
 
 $csrf_token = generate_csrf_token();
 $flash_success = $_SESSION['flash_success'] ?? '';
@@ -163,35 +144,6 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
         </button>
       </div>
     <?php endif; ?>
-
-    <!-- Overview Stats Grid (Mobile Compact & Clear) -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 w-full">
-      
-      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Model</span>
-        <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1"><?= $totalProjects ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Ukuran aktif</p>
-      </div>
-
-      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Foto</span>
-        <div class="text-xl sm:text-3xl font-extrabold text-moss-800 mt-1"><?= $totalImages ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Foto tersimpan</p>
-      </div>
-
-      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Total Video</span>
-        <div class="text-xl sm:text-3xl font-extrabold text-emerald-700 mt-1"><?= $totalVideos ?></div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Video biota</p>
-      </div>
-
-      <div class="bg-white p-3 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between min-w-0">
-        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider truncate">Di Beranda</span>
-        <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1">Maks 6</div>
-        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5 truncate">Awal tampil</p>
-      </div>
-
-    </div>
 
     <!-- Header List & Add Button (Mobile-First Prominent) -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 w-full">
