@@ -296,8 +296,9 @@
   </section>
 
   <!-- Footer (Centered & Clean Atelier) -->
-  <footer id="footerSection" class="bg-white border-t border-ivory-300 py-12 text-stoneink-700">
-    <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center space-y-6">
+  <footer id="footerSection" class="bg-white border-t border-ivory-300 text-stoneink-700">
+    <!-- Main Content Area -->
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 pt-12 pb-10 text-center space-y-6">
       
       <!-- Brand Logo & Studio Desc -->
       <div class="flex flex-col items-center space-y-3">
@@ -339,12 +340,12 @@
         </a>
       </div>
 
-      <!-- Copyright Singkat -->
-      <div class="pt-6 border-t border-ivory-200 text-center text-[11px] text-stoneink-500 space-y-1">
-        <p>© 2026 ziiquatic. Seluruh hak cipta dilindungi.</p>
-        <p>Marine & Reef Atelier</p>
-      </div>
+    </div>
 
+    <!-- Copyright Bottom Bar (Presisi Vertikal Sempurna: py-6) -->
+    <div class="border-t border-ivory-200 py-6 text-center text-[11px] text-stoneink-500 space-y-1">
+      <p>© 2026 ziiquatic. Seluruh hak cipta dilindungi.</p>
+      <p>Marine & Reef Atelier</p>
     </div>
   </footer>
 
