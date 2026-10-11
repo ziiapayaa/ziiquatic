@@ -171,7 +171,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
         </a>
       </div>
     <?php else: ?>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 w-full">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-5 w-full">
         <?php foreach ($projects as $item): ?>
           <?php
             $cover = !empty($item['mediaList'][0]['src']) ? $item['mediaList'][0]['src'] : 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80';
@@ -188,21 +188,21 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
             }
             $imgCount = $mediaCount - $videoCount;
           ?>
-          <div class="bg-white rounded-2xl border border-ivory-300 p-3.5 sm:p-4 shadow-sm hover:border-stoneink-400 transition-all flex flex-col justify-between space-y-3.5 sm:space-y-4 w-full min-w-0">
+          <div class="bg-white rounded-xl sm:rounded-2xl border border-ivory-300 p-2.5 sm:p-4 shadow-sm hover:border-stoneink-400 transition-all flex flex-col justify-between space-y-2.5 sm:space-y-4 w-full min-w-0">
             
-            <div class="space-y-3">
+            <div class="space-y-2 sm:space-y-3">
               <!-- Cover Image & Badges -->
-              <div class="aspect-[16/10] rounded-xl overflow-hidden bg-stoneink-900 relative">
+              <div class="aspect-[4/3] sm:aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden bg-stoneink-900 relative">
                 <img 
                   src="<?= htmlspecialchars($cover) ?>" 
                   alt="<?= htmlspecialchars($item['title']) ?>" 
                   class="w-full h-full object-cover"
                   onerror="this.src='https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80'"
                 >
-                <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[10px] font-bold text-stoneink-900 border border-ivory-300 shadow-sm">
+                <span class="absolute top-1.5 sm:top-2.5 left-1.5 sm:left-2.5 bg-white/95 backdrop-blur-md px-1.5 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold text-stoneink-900 border border-ivory-300 shadow-sm max-w-[85%] truncate">
                   <?= htmlspecialchars($item['sizeBadge'] ?? $item['title']) ?>
                 </span>
-                <span class="absolute bottom-2.5 right-2.5 bg-stoneink-900/80 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-medium text-ivory-100 flex items-center gap-1 shadow-sm">
+                <span class="absolute bottom-1.5 sm:bottom-2.5 right-1.5 sm:right-2.5 bg-stoneink-900/80 backdrop-blur-md px-1.5 sm:px-2 py-0.5 rounded-full text-[8px] sm:text-[9px] font-medium text-ivory-100 flex items-center gap-1 shadow-sm">
                   <span>📸 <?= $imgCount ?></span>
                   <?php if ($videoCount > 0): ?>
                     <span>• 🎬 <?= $videoCount ?></span>
@@ -211,37 +211,37 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
               </div>
 
               <!-- Title & ID -->
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <span class="text-[10px] text-stoneink-400 font-mono">ID: #<?= htmlspecialchars($item['id']) ?></span>
+              <div class="min-w-0">
+                <div class="flex items-center justify-between gap-1 mb-0.5 sm:mb-1">
+                  <span class="text-[9px] sm:text-[10px] text-stoneink-400 font-mono">#<?= htmlspecialchars($item['id']) ?></span>
                 </div>
-                <h3 class="text-sm font-bold text-stoneink-900 leading-snug">
+                <h3 class="text-xs sm:text-sm font-bold text-stoneink-900 leading-snug line-clamp-1" title="<?= htmlspecialchars($item['title']) ?>">
                   <?= htmlspecialchars($item['title']) ?>
                 </h3>
-                <p class="text-xs text-stoneink-500 mt-1 line-clamp-1">
+                <p class="text-[10px] sm:text-xs text-stoneink-500 mt-0.5 line-clamp-1">
                   <?= htmlspecialchars($item['placement'] ?? '') ?>
                 </p>
-                <p class="text-xs text-stoneink-600 mt-1.5 line-clamp-2 leading-relaxed">
+                <p class="text-xs text-stoneink-600 mt-1 line-clamp-2 leading-relaxed hidden sm:block">
                   <?= htmlspecialchars($item['desc'] ?? '') ?>
                 </p>
               </div>
             </div>
 
             <!-- Action Buttons (Touch-friendly & Clear) -->
-            <div class="pt-3 border-t border-ivory-200 flex items-center justify-between gap-2.5">
-              <a href="edit.php?id=<?= urlencode($item['id']) ?>" class="flex-1 py-2.5 px-3 rounded-xl bg-ivory-100 hover:bg-ivory-200 text-stoneink-900 text-xs sm:text-sm font-bold text-center border border-ivory-300 transition-colors flex items-center justify-center gap-1.5 active:scale-95 shadow-xs">
-                <svg class="w-4 h-4 text-moss-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                <span>Edit / Foto</span>
+            <div class="pt-2 sm:pt-3 border-t border-ivory-200 flex items-center justify-between gap-1.5 sm:gap-2.5">
+              <a href="edit.php?id=<?= urlencode($item['id']) ?>" class="flex-1 py-1.5 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl bg-ivory-100 hover:bg-ivory-200 text-stoneink-900 text-[11px] sm:text-sm font-bold text-center border border-ivory-300 transition-colors flex items-center justify-center gap-1 active:scale-95 shadow-2xs">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-moss-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                <span>Edit</span>
               </a>
 
               <button 
                 type="button" 
                 onclick="openDeleteModal(<?= (int)$item['id'] ?>, '<?= htmlspecialchars(addslashes($item['title'])) ?>')"
-                class="py-2.5 px-3.5 rounded-xl text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition-colors flex items-center justify-center gap-1 text-xs font-semibold active:scale-95 shadow-xs" 
+                class="py-1.5 sm:py-2.5 px-2 sm:px-3.5 rounded-lg sm:rounded-xl text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition-colors flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold active:scale-95 shadow-2xs shrink-0" 
                 title="Hapus Model Ini"
               >
-                <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                <span class="inline">Hapus</span>
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                <span class="hidden sm:inline">Hapus</span>
               </button>
             </div>
 
