@@ -62,19 +62,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="bg-ivory-100 text-stoneink-900 min-h-screen flex items-center justify-center p-4">
 
-  <div class="max-w-md w-full bg-white border border-ivory-300 rounded-3xl p-8 sm:p-10 shadow-lg relative">
+  <div class="max-w-md w-full bg-white border border-ivory-300 rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-lg relative">
     
     <!-- Brand Header -->
-    <div class="text-center space-y-2 mb-8">
-      <img src="../logo.png" alt="ziiquatic" class="h-14 w-auto mx-auto mb-2 object-contain">
-      <h1 class="text-2xl font-bold text-stoneink-900 tracking-tight font-sans">
+    <div class="text-center space-y-2 mb-6 sm:mb-8">
+      <img src="../logo.png" alt="ziiquatic" class="h-12 sm:h-14 w-auto mx-auto mb-2 object-contain">
+      <h1 class="text-xl sm:text-2xl font-bold text-stoneink-900 tracking-tight font-sans">
         ziiquatic<span class="text-moss-700">.</span> Admin
       </h1>
       <p class="text-xs text-stoneink-500">Panel pengelolaan konten & galeri portofolio.</p>
     </div>
 
     <?php if (!empty($info)): ?>
-      <div class="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-center gap-2">
+      <div class="mb-5 sm:mb-6 p-3.5 sm:p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs sm:text-sm flex items-center gap-2">
         <svg class="w-4 h-4 shrink-0 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
         </svg>
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <?php if (!empty($error)): ?>
-      <div class="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+      <div class="mb-5 sm:mb-6 p-3.5 sm:p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-center gap-2">
         <svg class="w-4 h-4 shrink-0 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
         </svg>
@@ -92,11 +92,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <!-- Form Login -->
-    <form method="POST" action="login.php" class="space-y-5">
+    <form method="POST" action="login.php" class="space-y-4 sm:space-y-5">
       <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
 
       <div>
-        <label for="username" class="block text-xs font-semibold text-stoneink-800 uppercase tracking-wider mb-2">Username</label>
+        <label for="username" class="block text-xs font-bold text-stoneink-800 uppercase tracking-wider mb-1.5 sm:mb-2">Username</label>
         <input 
           type="text" 
           id="username" 
@@ -104,12 +104,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           required 
           autocomplete="username"
           placeholder="admin" 
-          class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50 transition-all"
+          class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50 transition-all"
         >
       </div>
 
       <div>
-        <label for="password" class="block text-xs font-semibold text-stoneink-800 uppercase tracking-wider mb-2">Password</label>
+        <label for="password" class="block text-xs font-bold text-stoneink-800 uppercase tracking-wider mb-1.5 sm:mb-2">Password</label>
         <input 
           type="password" 
           id="password" 
@@ -117,19 +117,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           required 
           autocomplete="current-password"
           placeholder="••••••••" 
-          class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50 transition-all"
+          class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50 transition-all"
         >
       </div>
 
       <button 
         type="submit" 
-        class="w-full py-3.5 rounded-xl bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-semibold tracking-wide transition-all shadow-sm active:scale-[0.99] mt-2">
+        class="w-full py-3.5 rounded-xl bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md active:scale-[0.98] mt-2">
         Masuk ke Dashboard
       </button>
     </form>
 
-    <div class="mt-8 pt-6 border-t border-ivory-200 text-center text-xs text-stoneink-500">
-      <a href="../" class="inline-block text-moss-700 hover:text-moss-900 hover:underline">← Kembali ke Halaman Utama</a>
+    <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-ivory-200 text-center text-xs text-stoneink-500">
+      <a href="../" class="inline-flex items-center gap-1 text-moss-800 hover:text-moss-900 font-semibold hover:underline">← Kembali ke Halaman Utama</a>
     </div>
 
   </div>

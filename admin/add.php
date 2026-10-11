@@ -122,30 +122,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="bg-ivory-100 text-stoneink-900 min-h-screen antialiased flex flex-col">
 
-  <!-- Top Admin Navbar -->
+  <!-- Top Admin Navbar (Mobile-First) -->
   <header class="bg-white border-b border-ivory-300 sticky top-0 z-30 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="index.php" class="text-xs font-semibold text-moss-800 hover:text-moss-900 flex items-center gap-1.5">
-          ← Kembali ke Dashboard
-        </a>
-      </div>
-      <span class="text-xs text-stoneink-500 font-medium">Tambah Model Baru</span>
+    <div class="max-w-4xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-3">
+      <a href="index.php" class="px-3.5 py-1.5 rounded-full bg-ivory-100 hover:bg-ivory-200 border border-ivory-300 text-xs font-bold text-stoneink-900 flex items-center gap-1.5 transition-all active:scale-95 shadow-xs">
+        <svg class="w-4 h-4 text-moss-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Kembali</span>
+      </a>
+      <span class="text-xs sm:text-sm text-stoneink-600 font-bold">Tambah Model Baru</span>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-4xl mx-auto px-4 sm:px-8 py-8 flex-1 w-full">
+  <main class="max-w-4xl mx-auto px-3.5 sm:px-8 py-5 sm:py-8 flex-1 w-full">
     
-    <div class="bg-white rounded-3xl border border-ivory-300 p-6 sm:p-10 shadow-sm space-y-8">
+    <div class="bg-white rounded-2xl sm:rounded-3xl border border-ivory-300 p-4 sm:p-10 shadow-sm space-y-6 sm:space-y-8">
       
       <div>
-        <h1 class="text-2xl font-bold text-stoneink-900 tracking-tight">Tambah Model Aquarium</h1>
+        <h1 class="text-xl sm:text-2xl font-bold text-stoneink-900 tracking-tight">Tambah Model Aquarium</h1>
         <p class="text-xs sm:text-sm text-stoneink-500 mt-1">Masukkan informasi ukuran, penempatan ruangan, serta foto atau video dokumentasinya.</p>
       </div>
 
       <?php if (!empty($error)): ?>
-        <div class="flash-alert p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center justify-between gap-2 transition-all duration-300">
+        <div class="flash-alert p-3.5 sm:p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-center justify-between gap-2 transition-all duration-300">
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4 shrink-0 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -163,84 +162,84 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Section 1: Info Dasar -->
         <div class="space-y-4">
-          <h2 class="text-sm font-bold text-stoneink-900 uppercase tracking-wider border-b border-ivory-200 pb-2">1. Informasi Model</h2>
+          <h2 class="text-xs sm:text-sm font-bold text-stoneink-900 uppercase tracking-wider border-b border-ivory-200 pb-2">1. Informasi Model</h2>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="title" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Nama / Judul Ukuran <span class="text-rose-600">*</span></label>
+              <label for="title" class="block text-xs font-bold text-stoneink-800 mb-1.5">Nama / Judul Ukuran <span class="text-rose-600">*</span></label>
               <input 
                 type="text" 
                 id="title" 
                 name="title" 
                 required 
                 placeholder="Contoh: Aquarium 75 cm" 
-                class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+                class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
               >
             </div>
 
             <div>
-              <label for="sizeBadge" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Badge Tampilan Ukuran</label>
+              <label for="sizeBadge" class="block text-xs font-bold text-stoneink-800 mb-1.5">Badge Tampilan Ukuran</label>
               <input 
                 type="text" 
                 id="sizeBadge" 
                 name="sizeBadge" 
                 placeholder="Contoh: Ukuran 75 cm" 
-                class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+                class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
               >
             </div>
           </div>
 
           <div>
-            <label for="placement" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Rekomendasi Penempatan</label>
+            <label for="placement" class="block text-xs font-bold text-stoneink-800 mb-1.5">Rekomendasi Penempatan</label>
             <input 
               type="text" 
               id="placement" 
               name="placement" 
               placeholder="Contoh: Sangat pas untuk meja resepsionis atau ruang tamu" 
-              class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+              class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
             >
           </div>
 
           <div>
-            <label for="desc" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Deskripsi Detail</label>
+            <label for="desc" class="block text-xs font-bold text-stoneink-800 mb-1.5">Deskripsi Detail</label>
             <textarea 
               id="desc" 
               name="desc" 
               rows="3" 
               placeholder="Deskripsi spesifikasi, stabilitas ekosistem, jenis biota yang cocok..." 
-              class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+              class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
             ></textarea>
           </div>
         </div>
 
         <!-- Section 2: Upload File Foto & Video -->
-        <div class="space-y-4 pt-4">
-          <div class="flex items-center justify-between border-b border-ivory-200 pb-2">
+        <div class="space-y-4 pt-2">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-ivory-200 pb-2">
             <div>
-              <h2 class="text-sm font-bold text-stoneink-900 uppercase tracking-wider">2. Upload Foto & Video Langsung</h2>
-              <p class="text-xs text-stoneink-500">Pilih file foto (.jpg, .png, .webp) atau video (.mp4, .webm) dari komputer Anda.</p>
+              <h2 class="text-xs sm:text-sm font-bold text-stoneink-900 uppercase tracking-wider">2. Upload Foto & Video Langsung</h2>
+              <p class="text-[11px] sm:text-xs text-stoneink-500">Pilih file foto (.jpg, .png, .webp) atau video (.mp4) dari galeri HP.</p>
             </div>
-            <button type="button" onclick="addFileUploadRow()" class="text-xs font-semibold text-moss-800 hover:text-moss-900 px-3 py-1.5 rounded-lg bg-moss-50 border border-moss-200 transition-colors">
-              + Tambah Baris File
+            <button type="button" onclick="addFileUploadRow()" class="self-start sm:self-auto text-xs font-bold text-moss-800 hover:text-moss-900 px-3.5 py-2 rounded-xl bg-moss-50 border border-moss-200 transition-colors active:scale-95">
+              + Tambah File Lagi
             </button>
           </div>
 
           <div id="fileUploadContainer" class="space-y-3">
-            <div class="file-upload-row p-3 rounded-2xl bg-ivory-50/60 border border-ivory-300 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div class="file-upload-row p-3.5 rounded-2xl bg-ivory-50/70 border border-ivory-300 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
               <div class="flex-1">
                 <input 
                   type="file" 
                   name="media_files[]" 
                   accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime" 
-                  class="w-full text-xs text-stoneink-700 file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-moss-800 file:text-ivory-50 hover:file:bg-moss-900 cursor-pointer"
+                  class="w-full text-xs text-stoneink-700 file:mr-3 file:py-2 file:px-3.5 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-moss-800 file:text-ivory-50 hover:file:bg-moss-900 cursor-pointer"
                 >
               </div>
               <div class="sm:w-1/3">
                 <input 
                   type="text" 
                   name="media_file_labels[]" 
-                  placeholder="Keterangan (misal: Tampak Depan)" 
-                  class="w-full px-3 py-1.5 rounded-xl border border-ivory-300 text-xs bg-white focus:border-moss-700 outline-none"
+                  placeholder="Keterangan (opsional)" 
+                  class="w-full px-3 py-2 rounded-xl border border-ivory-300 text-xs bg-white focus:border-moss-700 outline-none"
                 >
               </div>
             </div>
@@ -248,13 +247,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <!-- Section 3: Opsi Tambah URL Media Online -->
-        <div class="space-y-4 pt-4">
-          <div class="flex items-center justify-between border-b border-ivory-200 pb-2">
+        <div class="space-y-4 pt-2">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-ivory-200 pb-2">
             <div>
-              <h2 class="text-sm font-bold text-stoneink-900 uppercase tracking-wider">3. Opsi: Link URL Media Online (Opsional)</h2>
-              <p class="text-xs text-stoneink-500">Jika file foto/video sudah ada di online (Unsplash, link video langsung), Anda bisa memasukkan URL-nya di sini.</p>
+              <h2 class="text-xs sm:text-sm font-bold text-stoneink-900 uppercase tracking-wider">3. Opsi: Link URL Media Online (Opsional)</h2>
+              <p class="text-[11px] sm:text-xs text-stoneink-500">Jika file foto/video sudah ada di internet (misal link Unsplash/link video).</p>
             </div>
-            <button type="button" onclick="addUrlMediaRow()" class="text-xs font-semibold text-stoneink-700 hover:text-stoneink-900 px-3 py-1.5 rounded-lg bg-white border border-ivory-300 transition-colors">
+            <button type="button" onclick="addUrlMediaRow()" class="self-start sm:self-auto text-xs font-semibold text-stoneink-700 hover:text-stoneink-900 px-3 py-1.5 rounded-xl bg-white border border-ivory-300 transition-colors active:scale-95">
               + Tambah Baris URL
             </button>
           </div>
@@ -264,15 +263,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
         </div>
 
-        <!-- Submit Button -->
-        <div class="pt-6 border-t border-ivory-200 flex items-center justify-end gap-3">
-          <a href="index.php" class="px-5 py-2.5 rounded-full border border-ivory-300 text-stoneink-700 hover:bg-ivory-100 text-xs sm:text-sm font-semibold transition-colors">
+        <!-- Submit Button (Mobile-First Full Width) -->
+        <div class="pt-5 border-t border-ivory-200 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2.5 sm:gap-3">
+          <a href="index.php" class="w-full sm:w-auto px-5 py-3 rounded-xl sm:rounded-full border border-ivory-300 text-stoneink-700 hover:bg-ivory-100 text-xs sm:text-sm font-bold text-center transition-colors">
             Batal
           </a>
           <button 
             type="submit" 
-            class="px-6 py-2.5 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-sm active:scale-95">
-            Simpan Model & Media
+            class="w-full sm:w-auto px-8 py-3.5 sm:py-3 rounded-xl sm:rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md active:scale-98 text-center flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Simpan Model & Media</span>
           </button>
         </div>
 

@@ -64,30 +64,29 @@ $isDefault = is_default_password();
 </head>
 <body class="bg-ivory-100 text-stoneink-900 min-h-screen antialiased flex flex-col">
 
-  <!-- Top Admin Navbar -->
+  <!-- Top Admin Navbar (Mobile-First) -->
   <header class="bg-white border-b border-ivory-300 sticky top-0 z-30 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="index.php" class="text-xs font-semibold text-moss-800 hover:text-moss-900 flex items-center gap-1.5">
-          ← Kembali ke Dashboard
-        </a>
-      </div>
-      <span class="text-xs text-stoneink-500 font-medium">Keamanan & Password</span>
+    <div class="max-w-4xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-3">
+      <a href="index.php" class="px-3.5 py-1.5 rounded-full bg-ivory-100 hover:bg-ivory-200 border border-ivory-300 text-xs font-bold text-stoneink-900 flex items-center gap-1.5 transition-all active:scale-95 shadow-xs">
+        <svg class="w-4 h-4 text-moss-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Kembali</span>
+      </a>
+      <span class="text-xs sm:text-sm text-stoneink-600 font-bold">Keamanan & Password</span>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-2xl mx-auto px-4 sm:px-8 py-8 flex-1 w-full">
+  <main class="max-w-2xl mx-auto px-3.5 sm:px-8 py-5 sm:py-8 flex-1 w-full">
     
-    <div class="bg-white rounded-3xl border border-ivory-300 p-6 sm:p-10 shadow-sm space-y-6">
+    <div class="bg-white rounded-2xl sm:rounded-3xl border border-ivory-300 p-4 sm:p-10 shadow-sm space-y-6">
       
       <div>
-        <h1 class="text-2xl font-bold text-stoneink-900 tracking-tight">Pengaturan Keamanan Admin</h1>
-        <p class="text-xs sm:text-sm text-stoneink-500 mt-1">Ubah username dan password admin sebelum mengunggah/hosting website ke publik.</p>
+        <h1 class="text-xl sm:text-2xl font-bold text-stoneink-900 tracking-tight">Pengaturan Keamanan Admin</h1>
+        <p class="text-xs sm:text-sm text-stoneink-500 mt-1">Ubah username dan password admin agar aman dari pihak luar.</p>
       </div>
 
       <?php if ($isDefault): ?>
-        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs sm:text-sm flex items-start gap-3">
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs sm:text-sm flex items-start gap-3">
           <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
           </svg>
@@ -99,7 +98,7 @@ $isDefault = is_default_password();
       <?php endif; ?>
 
       <?php if (!empty($error)): ?>
-        <div class="flash-alert p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center justify-between gap-2 transition-all duration-300">
+        <div class="flash-alert p-3.5 sm:p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm flex items-center justify-between gap-2 transition-all duration-300">
           <div class="flex items-center gap-2">
             <svg class="w-4 h-4 shrink-0 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -116,33 +115,33 @@ $isDefault = is_default_password();
         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
 
         <div>
-          <label for="username" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Username Admin</label>
+          <label for="username" class="block text-xs font-bold text-stoneink-800 mb-1.5">Username Admin</label>
           <input 
             type="text" 
             id="username" 
             name="username" 
             required 
             value="<?= htmlspecialchars($creds['admin_username']) ?>" 
-            class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50 font-mono"
+            class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50 font-mono"
           >
           <p class="text-[11px] text-stoneink-500 mt-1">Username untuk login ke dashboard.</p>
         </div>
 
         <div class="pt-2 border-t border-ivory-200">
-          <label for="current_password" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Password Saat Ini <span class="text-rose-600">*</span></label>
+          <label for="current_password" class="block text-xs font-bold text-stoneink-800 mb-1.5">Password Saat Ini <span class="text-rose-600">*</span></label>
           <input 
             type="password" 
             id="current_password" 
             name="current_password" 
             required 
             placeholder="Masukkan password saat ini (default: admin123)" 
-            class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+            class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
           >
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="new_password" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Password Baru <span class="text-rose-600">*</span></label>
+            <label for="new_password" class="block text-xs font-bold text-stoneink-800 mb-1.5">Password Baru <span class="text-rose-600">*</span></label>
             <input 
               type="password" 
               id="new_password" 
@@ -150,12 +149,12 @@ $isDefault = is_default_password();
               required 
               minlength="8"
               placeholder="Minimal 8 karakter" 
-              class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+              class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
             >
           </div>
 
           <div>
-            <label for="confirm_password" class="block text-xs font-semibold text-stoneink-800 mb-1.5">Ulangi Password Baru <span class="text-rose-600">*</span></label>
+            <label for="confirm_password" class="block text-xs font-bold text-stoneink-800 mb-1.5">Ulangi Password Baru <span class="text-rose-600">*</span></label>
             <input 
               type="password" 
               id="confirm_password" 
@@ -163,18 +162,18 @@ $isDefault = is_default_password();
               required 
               minlength="8"
               placeholder="Ketik ulang password baru" 
-              class="w-full px-4 py-2.5 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-sm bg-ivory-50/50"
+              class="w-full px-4 py-3 rounded-xl border border-ivory-300 focus:border-moss-700 focus:ring-2 focus:ring-moss-100 outline-none text-base sm:text-sm bg-ivory-50/50"
             >
           </div>
         </div>
 
-        <div class="pt-4 border-t border-ivory-200 flex items-center justify-end gap-3">
-          <a href="index.php" class="px-5 py-2.5 rounded-full border border-ivory-300 text-stoneink-700 hover:bg-ivory-100 text-xs sm:text-sm font-semibold transition-colors">
+        <div class="pt-4 border-t border-ivory-200 flex flex-col-reverse sm:flex-row items-stretch sm:items-center sm:justify-end gap-3">
+          <a href="index.php" class="w-full sm:w-auto text-center px-6 py-3.5 sm:py-2.5 rounded-full border border-ivory-300 text-stoneink-700 hover:bg-ivory-100 text-sm font-bold transition-colors">
             Batal
           </a>
           <button 
             type="submit" 
-            class="px-6 py-2.5 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-sm active:scale-95">
+            class="w-full sm:w-auto px-7 py-3.5 sm:py-2.5 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md active:scale-95 text-center">
             Simpan Password Baru
           </button>
         </div>

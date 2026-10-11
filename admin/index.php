@@ -49,23 +49,23 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
 </head>
 <body class="bg-ivory-100 text-stoneink-900 min-h-screen antialiased flex flex-col">
 
-  <!-- Top Admin Navbar -->
+  <!-- Top Admin Navbar (Mobile-First) -->
   <header class="bg-white border-b border-ivory-300 sticky top-0 z-30 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-3">
       
-      <div class="flex items-center gap-3">
-        <a href="index.php" class="flex items-center gap-2.5 group">
-          <img src="../logo.png" alt="ziiquatic" class="h-8 w-auto object-contain shrink-0">
-          <span class="text-lg font-bold tracking-tight text-stoneink-900 lowercase font-sans">
-            ziiquatic<span class="text-moss-700">.</span>
-          </span>
-        </a>
-        <span class="hidden sm:inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-moss-50 text-moss-800 border border-moss-100">
-          Admin Panel
+      <!-- Brand Logo -->
+      <a href="index.php" class="flex items-center gap-2 group shrink-0">
+        <img src="../logo.png" alt="ziiquatic" class="h-7 sm:h-8 w-auto object-contain shrink-0">
+        <span class="text-base sm:text-lg font-bold tracking-tight text-stoneink-900 lowercase font-sans">
+          ziiquatic<span class="text-moss-700">.</span>
         </span>
-      </div>
+        <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-moss-50 text-moss-800 border border-moss-100">
+          Admin
+        </span>
+      </a>
 
-      <div class="flex items-center gap-3 text-xs font-medium">
+      <!-- Desktop Nav Buttons (md ke atas) -->
+      <nav class="hidden md:flex items-center gap-2.5 text-xs font-medium">
         <a href="settings.php" class="px-3.5 py-2 rounded-full border border-ivory-300 text-stoneink-700 hover:text-stoneink-900 hover:bg-ivory-50 transition-all flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-stoneink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           Ganti Password
@@ -77,13 +77,46 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
         <a href="logout.php" class="px-3.5 py-2 rounded-full bg-rose-50 text-rose-700 hover:bg-rose-100 transition-colors">
           Keluar
         </a>
+      </nav>
+
+      <!-- Mobile Controls (Hamburger & Quick Web Link) -->
+      <div class="flex md:hidden items-center gap-2">
+        <a href="../" target="_blank" title="Lihat Website" class="w-9 h-9 rounded-full bg-ivory-100 border border-ivory-300 flex items-center justify-center text-stoneink-700 active:scale-95 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <button 
+          id="mobileMenuBtn" 
+          type="button" 
+          onclick="toggleMobileMenu()" 
+          aria-label="Buka Menu" 
+          class="w-9 h-9 rounded-full bg-ivory-100 border border-ivory-300 flex items-center justify-center text-stoneink-800 active:scale-95 shadow-sm"
+        >
+          <svg id="hamburgerIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="closeIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
       </div>
 
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDropdown" class="hidden md:hidden border-t border-ivory-200 bg-white px-4 py-3 space-y-2 shadow-lg">
+      <a href="../" target="_blank" class="w-full py-3 px-4 rounded-xl bg-ivory-50 text-stoneink-900 text-xs font-bold flex items-center gap-3 active:bg-ivory-100 border border-ivory-200">
+        <svg class="w-4 h-4 text-moss-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        <span>Lihat Tampilan Website Publik ↗</span>
+      </a>
+      <a href="settings.php" class="w-full py-3 px-4 rounded-xl bg-ivory-50 text-stoneink-900 text-xs font-bold flex items-center gap-3 active:bg-ivory-100 border border-ivory-200">
+        <svg class="w-4 h-4 text-moss-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <span>Ganti Password Admin</span>
+      </a>
+      <a href="logout.php" class="w-full py-3 px-4 rounded-xl bg-rose-50 text-rose-700 text-xs font-bold flex items-center gap-3 active:bg-rose-100 border border-rose-200">
+        <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        <span>Keluar dari Akun (Logout)</span>
+      </a>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex-1 w-full space-y-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-5 sm:py-8 flex-1 w-full space-y-6 sm:space-y-8">
     
     <!-- Peringatan Password Default Sebelum Hosting -->
     <?php if (is_default_password()): ?>
@@ -93,10 +126,10 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
           </svg>
           <div>
-            <span class="font-bold">Peringatan Keamanan Pre-Hosting:</span> Password admin masih default (<code class="bg-amber-100 px-1 py-0.5 rounded font-mono">admin123</code>). Segera ubah sekarang sebelum website di-hosting ke publik!
+            <span class="font-bold">Peringatan Keamanan:</span> Password admin masih default (<code class="bg-amber-100 px-1 py-0.5 rounded font-mono">admin123</code>). Segera ubah sekarang!
           </div>
         </div>
-        <a href="settings.php" class="px-4 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs whitespace-nowrap shadow-sm text-center">
+        <a href="settings.php" class="w-full sm:w-auto px-4 py-2.5 rounded-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs whitespace-nowrap shadow-sm text-center">
           Ganti Password Sekarang →
         </a>
       </div>
@@ -104,7 +137,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
     
     <!-- Flash Messages (Auto-dismissing) -->
     <?php if (!empty($flash_success)): ?>
-      <div class="flash-alert p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm flex items-center justify-between gap-3 shadow-sm transition-all duration-300">
+      <div class="flash-alert p-3.5 sm:p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm flex items-center justify-between gap-3 shadow-sm transition-all duration-300">
         <div class="flex items-center gap-2.5">
           <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -118,7 +151,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
     <?php endif; ?>
 
     <?php if (!empty($flash_error)): ?>
-      <div class="flash-alert p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm flex items-center justify-between gap-3 shadow-sm transition-all duration-300">
+      <div class="flash-alert p-3.5 sm:p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm flex items-center justify-between gap-3 shadow-sm transition-all duration-300">
         <div class="flex items-center gap-2.5">
           <svg class="w-5 h-5 text-rose-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -131,45 +164,45 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
       </div>
     <?php endif; ?>
 
-    <!-- Overview Stats Grid -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Overview Stats Grid (Mobile Compact & Clear) -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
       
-      <div class="bg-white p-5 rounded-2xl border border-ivory-300 shadow-sm space-y-1">
-        <span class="text-xs font-semibold text-stoneink-500 uppercase tracking-wider">Total Model</span>
-        <div class="text-2xl sm:text-3xl font-bold text-stoneink-900"><?= $totalProjects ?></div>
-        <p class="text-[11px] text-stoneink-500">Pilihan ukuran aquarium</p>
+      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Model</span>
+        <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1"><?= $totalProjects ?></div>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Ukuran aktif</p>
       </div>
 
-      <div class="bg-white p-5 rounded-2xl border border-ivory-300 shadow-sm space-y-1">
-        <span class="text-xs font-semibold text-stoneink-500 uppercase tracking-wider">Total Foto</span>
-        <div class="text-2xl sm:text-3xl font-bold text-moss-800"><?= $totalImages ?></div>
-        <p class="text-[11px] text-stoneink-500">Dokumentasi foto aktif</p>
+      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Foto</span>
+        <div class="text-xl sm:text-3xl font-extrabold text-moss-800 mt-1"><?= $totalImages ?></div>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Foto tersimpan</p>
       </div>
 
-      <div class="bg-white p-5 rounded-2xl border border-ivory-300 shadow-sm space-y-1">
-        <span class="text-xs font-semibold text-stoneink-500 uppercase tracking-wider">Total Video</span>
-        <div class="text-2xl sm:text-3xl font-bold text-emerald-700"><?= $totalVideos ?></div>
-        <p class="text-[11px] text-stoneink-500">Klip video gerak biota</p>
+      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Total Video</span>
+        <div class="text-xl sm:text-3xl font-extrabold text-emerald-700 mt-1"><?= $totalVideos ?></div>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Video biota</p>
       </div>
 
-      <div class="bg-white p-5 rounded-2xl border border-ivory-300 shadow-sm space-y-1">
-        <span class="text-xs font-semibold text-stoneink-500 uppercase tracking-wider">Tampilan Beranda</span>
-        <div class="text-2xl sm:text-3xl font-bold text-stoneink-900">Maks 6</div>
-        <p class="text-[11px] text-stoneink-500">Sisanya via tombol "Lihat Semua"</p>
+      <div class="bg-white p-3.5 sm:p-5 rounded-2xl border border-ivory-300 shadow-sm flex flex-col justify-between">
+        <span class="text-[10px] sm:text-xs font-bold text-stoneink-500 uppercase tracking-wider">Di Beranda</span>
+        <div class="text-xl sm:text-3xl font-extrabold text-stoneink-900 mt-1">Maks 6</div>
+        <p class="text-[10px] sm:text-[11px] text-stoneink-500 mt-0.5">Awal tampil</p>
       </div>
 
     </div>
 
-    <!-- Header List & Add Button -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+    <!-- Header List & Add Button (Mobile-First Prominent) -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 pt-1">
       <div>
-        <h2 class="text-xl sm:text-2xl font-bold text-stoneink-900 tracking-tight">Koleksi Portofolio & Media</h2>
-        <p class="text-xs sm:text-sm text-stoneink-500 mt-0.5">Tambahkan foto atau video baru agar pengunjung website dapat melihat karya terbaru Anda.</p>
+        <h2 class="text-lg sm:text-2xl font-bold text-stoneink-900 tracking-tight">Koleksi Portofolio & Media</h2>
+        <p class="text-xs sm:text-sm text-stoneink-500 mt-0.5">Kelola foto dan video aquarium yang tampil di website.</p>
       </div>
 
-      <a href="add.php" class="px-5 py-3 rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-xs sm:text-sm font-semibold tracking-wide transition-all shadow-sm flex items-center justify-center gap-2 self-start sm:self-auto active:scale-95">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-        Tambah Model Aquarium Baru
+      <a href="add.php" class="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-2xl sm:rounded-full bg-moss-800 hover:bg-moss-900 text-ivory-50 text-sm font-bold tracking-wide transition-all shadow-md flex items-center justify-center gap-2 active:scale-98">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+        <span>+ Tambah Model Baru</span>
       </a>
     </div>
 
@@ -242,20 +275,21 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
               </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="pt-3 border-t border-ivory-200 flex items-center justify-between gap-2">
-              <a href="edit.php?id=<?= urlencode($item['id']) ?>" class="flex-1 py-2 px-3 rounded-xl bg-ivory-100 hover:bg-ivory-200 text-stoneink-800 text-xs font-semibold text-center border border-ivory-300 transition-colors flex items-center justify-center gap-1.5">
-                <svg class="w-3.5 h-3.5 text-moss-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                Edit & Media
+            <!-- Action Buttons (Touch-friendly & Clear) -->
+            <div class="pt-3 border-t border-ivory-200 flex items-center justify-between gap-2.5">
+              <a href="edit.php?id=<?= urlencode($item['id']) ?>" class="flex-1 py-2.5 px-3 rounded-xl bg-ivory-100 hover:bg-ivory-200 text-stoneink-900 text-xs sm:text-sm font-bold text-center border border-ivory-300 transition-colors flex items-center justify-center gap-1.5 active:scale-95 shadow-xs">
+                <svg class="w-4 h-4 text-moss-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                <span>Edit / Foto</span>
               </a>
 
               <button 
                 type="button" 
                 onclick="openDeleteModal(<?= (int)$item['id'] ?>, '<?= htmlspecialchars(addslashes($item['title'])) ?>')"
-                class="p-2 rounded-xl text-rose-600 hover:bg-rose-50 border border-transparent hover:border-rose-200 transition-colors" 
-                title="Hapus Portofolio"
+                class="py-2.5 px-3.5 rounded-xl text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition-colors flex items-center justify-center gap-1 text-xs font-semibold active:scale-95 shadow-xs" 
+                title="Hapus Model Ini"
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                <svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                <span class="inline">Hapus</span>
               </button>
             </div>
 
@@ -267,7 +301,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
   </main>
 
   <!-- Admin Footer -->
-  <footer class="bg-white border-t border-ivory-300 py-4 text-center text-xs text-stoneink-500">
+  <footer class="bg-white border-t border-ivory-300 py-5 text-center text-xs text-stoneink-500">
     <p>© 2026 ziiquatic Studio Admin Panel • Marine & Reef Atelier</p>
   </footer>
 
@@ -313,6 +347,23 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
   </div>
 
   <script>
+    // Toggle Menu Mobile Drawer
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenuDropdown');
+      const hamIcon = document.getElementById('hamburgerIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      if (!menu) return;
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        hamIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        hamIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
     // Logika Modal Hapus Custom
     function openDeleteModal(id, title) {
       document.getElementById('deleteTargetId').value = id;
