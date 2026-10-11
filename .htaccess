@@ -1,0 +1,45 @@
+# ========================================================
+# ziiquatic - Production Pre-Hosting Security Hardening
+# ========================================================
+
+# 1. Matikan Directory Browsing / Listing & Tentukan Index Utama
+Options -Indexes -MultiViews
+DirectoryIndex index.php index.html
+
+# 2. Blokir Akses ke Direktori Data & File Konfigurasi
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Blokir akses langsung via web browser ke folder data/
+    RewriteRule ^data/ - [F,L,NC]
+
+    # Blokir akses ke file tersembunyi (dimulai dengan titik seperti .rate_limits.json, .env)
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+</IfModule>
+
+# 3. Blokir Akses ke File Sensitif & Ekstensi Berbahaya
+<FilesMatch "(?i)\.(env|git|htaccess|htpasswd|ini|log|sh|sql|bak|swp|json|conf|md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 4. HTTP Security Headers
+<IfModule mod_headers.c>
+    # Cegah Clickjacking (iframe embedding)
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Cegah MIME Type Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # XSS Protection untuk browser warisan
+    Header always set X-XSS-Protection "1; mode=block"
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Matikan akses API sensorik browser yang tidak diperlukan
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# 5. Set Default Charset
+AddDefaultCharset UTF-8

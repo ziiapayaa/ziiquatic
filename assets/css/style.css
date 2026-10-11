@@ -1,0 +1,74 @@
+/* ========================================================
+   ziiquatic — Studio Dekorasi Aquarium Air Laut
+   Custom Stylesheet (Modular)
+   ======================================================== */
+
+/* Styling Natural Ivory Theme */
+body {
+  background-color: #FAF8F5;
+  color: #1B1C1A;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Soft Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B6AEA0;
+}
+
+/* Utility: Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Efek cahaya santai (pulse glow) untuk tombol WhatsApp melayang */
+@keyframes relaxedPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5), 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0), 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.wa-floating-glow {
+  animation: relaxedPulseGlow 2.6s ease-in-out infinite;
+}
+
+/* Smooth Image Transitions */
+.gallery-card-img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.group:hover .gallery-card-img {
+  transform: scale(1.05);
+}
+
+/* Modal Animations */
+#projectModal:not(.hidden) {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

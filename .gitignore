@@ -1,0 +1,16 @@
+# Environment & Credentials
+data/config.php
+data/.rate_limits.json
+.env
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Uploaded User Files (keep folder structure)
+uploads/*
+!uploads/.htaccess
+!uploads/index.html
